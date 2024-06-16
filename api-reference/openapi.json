@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "OpenAPI Plant Store",
+    "title": "Scrape Table",
     "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
     "license": {
       "name": "MIT"
@@ -21,7 +21,7 @@
   "paths": {
     "/maps/search": {
       "post": {
-        "description": "Search for real estate maps",
+        "description": "Search Google Maps based on certain lat and long coordinates.",
         "requestBody": {
           "description": "Search query parameters",
           "content": {

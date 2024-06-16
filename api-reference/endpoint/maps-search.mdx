@@ -1,0 +1,94 @@
+---
+title: 'Search Real Estate Maps'
+openapi: 'POST /maps/search'
+description: 'Search for real estate maps based on various parameters'
+parameters:
+  - name: 'query'
+    in: 'body'
+    description: 'Search query'
+    required: true
+    schema:
+      type: 'string'
+  - name: 'limit'
+    in: 'body'
+    description: 'Maximum number of results'
+    required: true
+    schema:
+      type: 'integer'
+  - name: 'country'
+    in: 'body'
+    description: 'Country code'
+    required: true
+    schema:
+      type: 'string'
+  - name: 'lang'
+    in: 'body'
+    description: 'Language code'
+    required: true
+    schema:
+      type: 'string'
+  - name: 'lat'
+    in: 'body'
+    description: 'Latitude'
+    required: true
+    schema:
+      type: 'number'
+      format: 'float'
+  - name: 'lng'
+    in: 'body'
+    description: 'Longitude'
+    required: true
+    schema:
+      type: 'number'
+      format: 'float'
+  - name: 'offset'
+    in: 'body'
+    description: 'Offset for pagination'
+    required: true
+    schema:
+      type: 'integer'
+  - name: 'zoom'
+    in: 'body'
+    description: 'Zoom level'
+    required: true
+    schema:
+      type: 'integer'
+  - name: 'flatten'
+    in: 'body'
+    description: 'Flatten results'
+    required: true
+    schema:
+      type: 'boolean'
+responses:
+  '200':
+    description: 'Search results'
+    content:
+      application/json:
+        schema:
+          type: 'object'
+          properties:
+            results:
+              type: 'array'
+              items:
+                type: 'object'
+                additionalProperties: true
+  '400':
+    description: 'Unexpected error'
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: 'object'
+      properties:
+        error:
+          type: 'integer'
+          format: 'int32'
+        message:
+          type: 'string'
+      required:
+        - error
+        - message
+---

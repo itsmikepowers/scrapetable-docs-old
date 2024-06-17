@@ -56,6 +56,44 @@
           }
         }
       }
+    },
+    "/maps/reviews": {
+      "post": {
+        "description": "Search Google Maps reviews for a specific business based on business ID.",
+        "requestBody": {
+          "description": "Review search parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReviewPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewResults"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -105,6 +143,44 @@
         "required": ["query", "limit", "country", "lang", "lat", "lng", "offset", "zoom", "flatten"]
       },
       "SearchResults": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "ReviewPayload": {
+        "type": "object",
+        "properties": {
+          "business_id": {
+            "type": "string",
+            "description": "Business ID"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum number of results"
+          },
+          "country": {
+            "type": "string",
+            "description": "Country code"
+          },
+          "lang": {
+            "type": "string",
+            "description": "Language code"
+          },
+          "sort": {
+            "type": "string",
+            "description": "Sort order for reviews"
+          }
+        },
+        "required": ["business_id", "limit", "country", "lang", "sort"]
+      },
+      "ReviewResults": {
         "type": "object",
         "properties": {
           "results": {

@@ -72,7 +72,8 @@
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/maps-search"
+        "api-reference/endpoint/maps-search",
+        "api-reference/endpoint/maps-reviews"
       ]
     }
   ],

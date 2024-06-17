@@ -149,8 +149,7 @@
             "type": "boolean",
             "description": "Flatten results"
           }
-        },
-        "required": ["query", "limit", "country", "lang", "lat", "lng", "offset", "zoom", "flatten"]
+        }
       },
       "SearchResults": {
         "type": "object",
@@ -187,8 +186,7 @@
             "type": "string",
             "description": "Sort order for reviews"
           }
-        },
-        "required": ["business_id", "limit", "country", "lang", "sort"]
+        }
       },
       "ReviewResults": {
         "type": "object",

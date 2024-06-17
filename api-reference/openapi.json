@@ -15,13 +15,18 @@
   ],
   "security": [
     {
-      "bearerAuth": []
+      "apiKeyAuth": []
     }
   ],
   "paths": {
     "/maps/search": {
       "post": {
         "description": "Search Google Maps based on certain lat and long coordinates.",
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ],
         "requestBody": {
           "description": "Search query parameters",
           "content": {
@@ -60,6 +65,11 @@
     "/maps/reviews": {
       "post": {
         "description": "Search Google Maps reviews for a specific business based on business ID.",
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ],
         "requestBody": {
           "description": "Review search parameters",
           "content": {

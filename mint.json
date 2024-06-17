@@ -64,13 +64,23 @@
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Google Maps",
       "pages": [
         "api-reference/endpoint/maps-search",
         "api-reference/endpoint/maps-reviews",
-        "api-reference/endpoint/maps-search-bulk",
+        "api-reference/endpoint/maps-search-bulk"
+      ]
+    },
+    {
+      "group": "Linkedin",
+      "pages": [
         "api-reference/endpoint/linkedin-profiles",
-        "api-reference/endpoint/linkedin-companies",
+        "api-reference/endpoint/linkedin-companies"
+      ]
+    },
+    {
+      "group": "Website",
+      "pages": [
         "api-reference/endpoint/website-email-socials"
       ]
     }

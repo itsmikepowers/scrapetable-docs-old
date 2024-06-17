@@ -1,0 +1,63 @@
+openapi: 3.0.0
+info:
+  title: 'LinkedIn Profiles'
+  description: 'Retrieve LinkedIn profile information based on profile URLs.'
+  version: '1.0.0'
+paths:
+  /linkedin/profiles:
+    post:
+      summary: 'Retrieve LinkedIn profile information'
+      description: 'Fetch LinkedIn profile details for a list of LinkedIn profile URLs and optionally flatten the results.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: 'object'
+              properties:
+                links:
+                  type: 'array'
+                  description: 'List of LinkedIn profile URLs'
+                  items:
+                    type: 'string'
+                  example:
+                    - 'http://www.linkedin.com/in/luke-sharp-b3838719a'
+                    - 'http://www.linkedin.com/in/hollie-smith-96ab44b5'
+                    - 'http://www.linkedin.com/in/jeannie-wyrick-b4760710a'
+                    - 'http://www.linkedin.com/in/rodneydbainjr'
+                flatten:
+                  type: 'boolean'
+                  description: 'Option to flatten the response structure'
+                  example: true
+              required:
+                - links
+                - flatten
+      responses:
+        '200':
+          description: 'Successful response with LinkedIn profile details'
+          content:
+            application/json:
+              schema:
+                type: 'array'
+                items:
+                  type: 'object'
+                  additionalProperties: true
+        '400':
+          description: 'Unexpected error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: 'object'
+      properties:
+        error:
+          type: 'integer'
+          format: 'int32'
+        message:
+          type: 'string'
+      required:
+        - error
+        - message

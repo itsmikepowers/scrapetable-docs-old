@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+      "business_id": {
+        "type": "string",
+        "description": "Business ID"
+      },
+      "limit": {
+        "type": "integer",
+        "description": "Maximum number of results"
+      },
+      "country": {
+        "type": "string",
+        "description": "Country code"
+      },
+      "lang": {
+        "type": "string",
+        "description": "Language code"
+      },
+      "sort": {
+        "type": "string",
+        "description": "Sort order for reviews"
+      }
+    },
+    "required": [
+      "business_id",
+      "limit",
+      "country",
+      "lang",
+      "sort"
+    ]
+  }
+  

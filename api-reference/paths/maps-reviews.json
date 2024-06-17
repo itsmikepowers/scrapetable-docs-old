@@ -1,0 +1,44 @@
+{
+    "post": {
+      "description": "Search Google Maps reviews for a specific business based on business ID.",
+      "security": [
+        {
+          "apiKeyAuth": []
+        }
+      ],
+      "requestBody": {
+        "description": "Review search parameters",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/review-payload.json"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "Search results",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../schemas/review-results.json"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Unexpected error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../schemas/error.json"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

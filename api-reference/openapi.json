@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "https://v2.scrapetable.com"
+      "url": "http://v2.scrapetable.com"
     }
   ],
   "security": [
@@ -20,198 +20,28 @@
   ],
   "paths": {
     "/maps/search": {
-      "post": {
-        "description": "Search Google Maps based on certain lat and long coordinates.",
-        "security": [
-          {
-            "apiKeyAuth": []
-          }
-        ],
-        "requestBody": {
-          "description": "Search query parameters",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchPayload"
-              }
-            }
-          },
-          "required": false
-        },
-        "responses": {
-          "200": {
-            "description": "Search results",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SearchResults"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "./paths/maps-search.json"
     },
     "/maps/reviews": {
-      "post": {
-        "description": "Search Google Maps reviews for a specific business based on business ID.",
-        "security": [
-          {
-            "apiKeyAuth": []
-          }
-        ],
-        "requestBody": {
-          "description": "Review search parameters",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReviewPayload"
-              }
-            }
-          },
-          "required": false
-        },
-        "responses": {
-          "200": {
-            "description": "Search results",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReviewResults"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "./paths/maps-reviews.json"
     }
   },
   "components": {
     "schemas": {
       "SearchPayload": {
-        "type": "object",
-        "properties": {
-          "query": {
-            "type": "string",
-            "description": "Search query"
-          },
-          "limit": {
-            "type": "integer",
-            "description": "Maximum number of results"
-          },
-          "country": {
-            "type": "string",
-            "description": "Country code"
-          },
-          "lang": {
-            "type": "string",
-            "description": "Language code"
-          },
-          "lat": {
-            "type": "number",
-            "format": "float",
-            "description": "Latitude"
-          },
-          "lng": {
-            "type": "number",
-            "format": "float",
-            "description": "Longitude"
-          },
-          "offset": {
-            "type": "integer",
-            "description": "Offset for pagination"
-          },
-          "zoom": {
-            "type": "integer",
-            "description": "Zoom level"
-          },
-          "flatten": {
-            "type": "boolean",
-            "description": "Flatten results"
-          }
-        }
+        "$ref": "./schemas/search-payload.json"
       },
       "SearchResults": {
-        "type": "object",
-        "properties": {
-          "results": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        }
+        "$ref": "./schemas/search-results.json"
       },
       "ReviewPayload": {
-        "type": "object",
-        "properties": {
-          "business_id": {
-            "type": "string",
-            "description": "Business ID"
-          },
-          "limit": {
-            "type": "integer",
-            "description": "Maximum number of results"
-          },
-          "country": {
-            "type": "string",
-            "description": "Country code"
-          },
-          "lang": {
-            "type": "string",
-            "description": "Language code"
-          },
-          "sort": {
-            "type": "string",
-            "description": "Sort order for reviews"
-          }
-        }
+        "$ref": "./schemas/review-payload.json"
       },
       "ReviewResults": {
-        "type": "object",
-        "properties": {
-          "results": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        }
+        "$ref": "./schemas/review-results.json"
       },
       "Error": {
-        "type": "object",
-        "properties": {
-          "error": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "message": {
-            "type": "string"
-          }
-        },
-        "required": ["error", "message"]
+        "$ref": "./schemas/error.json"
       }
     },
     "securitySchemes": {

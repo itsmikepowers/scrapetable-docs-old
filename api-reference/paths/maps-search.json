@@ -1,0 +1,44 @@
+{
+    "post": {
+      "description": "Search Google Maps based on certain lat and long coordinates.",
+      "security": [
+        {
+          "apiKeyAuth": []
+        }
+      ],
+      "requestBody": {
+        "description": "Search query parameters",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/search-payload.json"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "Search results",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../schemas/search-results.json"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Unexpected error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../schemas/error.json"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

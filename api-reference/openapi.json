@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "http://api.scrapetable.com"
+      "url": "http://v2.scrapetable.com"
     }
   ],
   "security": [

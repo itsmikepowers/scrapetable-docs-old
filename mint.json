@@ -63,13 +63,15 @@
         "essentials/reusable-snippets"
       ]
     },
-
     {
       "group": "Endpoint Examples",
       "pages": [
         "api-reference/endpoint/maps-search",
         "api-reference/endpoint/maps-reviews",
-                "api-reference/endpoint/maps-search-bulk"
+        "api-reference/endpoint/maps-search-bulk",
+        "api-reference/endpoint/linkedin-profiles",
+        "api-reference/endpoint/linkedin-companies",
+        "api-reference/endpoint/website-email-socials"
       ]
     }
   ],

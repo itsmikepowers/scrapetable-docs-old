@@ -23,7 +23,7 @@
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://scrapetable.com"
   },
   "tabs": [
     {
@@ -35,17 +35,12 @@
     {
       "name": "Documentation",
       "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "url": "https://docs.scrapetable.com"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
+      "name": "Home",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://scrapetable.com"
     }
   ],
   "navigation": [
@@ -82,8 +77,8 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "youtube": "https://youtube.com/@itsmikepowers",
+    "github": "https://github.com/itsmikepowers",
+    "linkedin": "https://www.linkedin.com/in/itsmikepowers"
   }
 }

@@ -1,0 +1,76 @@
+---
+title: 'Maps Search Bulk'
+openapi: 'POST /maps/search-bulk'
+description: 'Search Google Maps based on certain lat and long coordinates for multiple locations.'
+parameters:
+  - name: 'payloads'
+    in: 'body'
+    description: 'Array of search query parameters for multiple locations'
+    required: true
+    schema:
+      type: 'array'
+      items:
+        type: 'object'
+        properties:
+          query:
+            type: 'string'
+            description: 'Search query'
+          limit:
+            type: 'integer'
+            description: 'Maximum number of results'
+          country:
+            type: 'string'
+            description: 'Country code'
+          lang:
+            type: 'string'
+            description: 'Language code'
+          lat:
+            type: 'number'
+            format: 'float'
+            description: 'Latitude'
+          lng:
+            type: 'number'
+            format: 'float'
+            description: 'Longitude'
+          offset:
+            type: 'integer'
+            description: 'Offset for pagination'
+          zoom:
+            type: 'integer'
+            description: 'Zoom level'
+          flatten:
+            type: 'boolean'
+            description: 'Flatten results'
+responses:
+  '200':
+    description: 'Search results'
+    content:
+      application/json:
+        schema:
+          type: 'object'
+          properties:
+            results:
+              type: 'array'
+              items:
+                type: 'object'
+                additionalProperties: true
+  '400':
+    description: 'Unexpected error'
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: 'object'
+      properties:
+        error:
+          type: 'integer'
+          format: 'int32'
+        message:
+          type: 'string'
+      required:
+        - error
+        - message
+---

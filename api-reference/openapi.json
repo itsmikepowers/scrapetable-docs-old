@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "http://v2.scrapetable.com"
+      "url": "https://v2.scrapetable.com"
     }
   ],
   "security": [
@@ -24,6 +24,52 @@
     },
     "/maps/reviews": {
       "$ref": "./paths/maps-reviews.json"
+    },
+    "/maps/search-bulk": {
+      "post": {
+        "description": "Search Google Maps based on certain lat and long coordinates for multiple locations.",
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "Search query parameters for multiple locations",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "../schemas/search-payload.json"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../schemas/search-results.json"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../schemas/error.json"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {

@@ -68,7 +68,8 @@
       "group": "Endpoint Examples",
       "pages": [
         "api-reference/endpoint/maps-search",
-        "api-reference/endpoint/maps-reviews"
+        "api-reference/endpoint/maps-reviews",
+                "api-reference/endpoint/maps-search-bulk"
       ]
     }
   ],

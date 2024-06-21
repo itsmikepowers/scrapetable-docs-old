@@ -1,51 +1,57 @@
-openapi: 3.0.0
-info:
-  title: 'LinkedIn Companies'
-  description: 'Retrieve LinkedIn company information based on company URLs.'
-  version: '1.0.0'
-paths:
-  /linkedin/companies:
-    post:
-      summary: 'Retrieve LinkedIn company information'
-      description: 'Fetch LinkedIn company details for a list of LinkedIn company URLs and optionally flatten the results.'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: 'object'
-              properties:
-                links:
-                  type: 'array'
-                  description: 'List of LinkedIn company URLs'
-                  items:
-                    type: 'string'
-                  example:
-                    - 'http://www.linkedin.com/company/aep-energy'
-                    - 'http://www.linkedin.com/company/johnson-&-johnson'
-                    - 'http://www.linkedin.com/company/ametek'
-                flatten:
-                  type: 'boolean'
-                  description: 'Option to flatten the response structure'
-                  example: false
-              required:
-                - links
-      responses:
-        '200':
-          description: 'Successful response with LinkedIn company details'
-          content:
-            application/json:
-              schema:
-                type: 'array'
-                items:
-                  type: 'object'
-                  additionalProperties: true
-        '400':
-          description: 'Unexpected error'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
+---
+title: 'Linkedin Companies'
+openapi: 'POST /maps/linkedin-companies'
+description: 'Search Linkedin to get company data.'
+parameters:
+  - name: 'business_id'
+    in: 'body'
+    description: 'Business ID'
+    required: true
+    schema:
+      type: 'string'
+  - name: 'limit'
+    in: 'body'
+    description: 'Maximum number of results'
+    required: true
+    schema:
+      type: 'integer'
+  - name: 'country'
+    in: 'body'
+    description: 'Country code'
+    required: true
+    schema:
+      type: 'string'
+  - name: 'lang'
+    in: 'body'
+    description: 'Language code'
+    required: true
+    schema:
+      type: 'string'
+  - name: 'sort'
+    in: 'body'
+    description: 'Sort order for reviews'
+    required: true
+    schema:
+      type: 'string'
+responses:
+  '200':
+    description: 'Search results'
+    content:
+      application/json:
+        schema:
+          type: 'object'
+          properties:
+            results:
+              type: 'array'
+              items:
+                type: 'object'
+                additionalProperties: true
+  '400':
+    description: 'Unexpected error'
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/Error'
 components:
   schemas:
     Error:
@@ -59,3 +65,4 @@ components:
       required:
         - error
         - message
+---

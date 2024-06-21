@@ -2,63 +2,7 @@
 title: 'Maps Search'
 openapi: 'POST /maps/search'
 description: 'Search Google Maps based on certain lat and long coordinates.'
-parameters:
-  - name: 'query'
-    in: 'body'
-    description: 'Search query'
-    required: true
-    schema:
-      type: 'string'
-  - name: 'limit'
-    in: 'body'
-    description: 'Maximum number of results'
-    required: true
-    schema:
-      type: 'integer'
-  - name: 'country'
-    in: 'body'
-    description: 'Country code'
-    required: true
-    schema:
-      type: 'string'
-  - name: 'lang'
-    in: 'body'
-    description: 'Language code'
-    required: true
-    schema:
-      type: 'string'
-  - name: 'lat'
-    in: 'body'
-    description: 'Latitude'
-    required: true
-    schema:
-      type: 'number'
-      format: 'float'
-  - name: 'lng'
-    in: 'body'
-    description: 'Longitude'
-    required: true
-    schema:
-      type: 'number'
-      format: 'float'
-  - name: 'offset'
-    in: 'body'
-    description: 'Offset for pagination'
-    required: true
-    schema:
-      type: 'integer'
-  - name: 'zoom'
-    in: 'body'
-    description: 'Zoom level'
-    required: true
-    schema:
-      type: 'integer'
-  - name: 'flatten'
-    in: 'body'
-    description: 'Flatten results'
-    required: true
-    schema:
-      type: 'boolean'
+
 responses:
   '200':
     description: 'Search results'

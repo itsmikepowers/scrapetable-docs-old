@@ -26,59 +26,7 @@
       "$ref": "./paths/maps-reviews.json"
     },
     "/maps/search-bulk": {
-      "post": {
-        "description": "Search Google Maps based on certain lat and long coordinates for multiple locations.",
-        "security": [
-          {
-            "apiKeyAuth": []
-          }
-        ],
-        "requestBody": {
-          "description": "Search query parameters for multiple locations",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "../schemas/search-payload.json"
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Search results",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/search-results.json"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/error.json"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/linkedin/profiles": {
-      "$ref": "./paths/linkedin-profiles.json"
-    },
-    "/linkedin/companies": {
-      "$ref": "./paths/linkedin-companies.json"
-    },
-    "/website/email-socials": {
-      "$ref": "./paths/website-email-socials.json"
+      "$ref": "./paths/maps-search-bulk.json"
     }
   },
   "components": {
@@ -94,6 +42,12 @@
       },
       "ReviewResults": {
         "$ref": "./schemas/review-results.json"
+      },
+      "BulkSearchPayload": {
+        "$ref": "./schemas/bulk-search-payload.json"
+      },
+      "BulkSearchResults": {
+        "$ref": "./schemas/bulk-search-results.json"
       },
       "Error": {
         "$ref": "./schemas/error.json"

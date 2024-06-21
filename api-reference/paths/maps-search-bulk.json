@@ -11,55 +11,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "query": {
-                    "type": "string",
-                    "description": "Search query"
-                  },
-                  "limit": {
-                    "type": "integer",
-                    "description": "Maximum number of results"
-                  },
-                  "country": {
-                    "type": "string",
-                    "description": "Country code"
-                  },
-                  "lang": {
-                    "type": "string",
-                    "description": "Language code"
-                  },
-                  "lat": {
-                    "type": "number",
-                    "format": "float",
-                    "description": "Latitude"
-                  },
-                  "lng": {
-                    "type": "number",
-                    "format": "float",
-                    "description": "Longitude"
-                  },
-                  "offset": {
-                    "type": "integer",
-                    "description": "Offset for pagination"
-                  },
-                  "zoom": {
-                    "type": "integer",
-                    "description": "Zoom level"
-                  },
-                  "flatten": {
-                    "type": "boolean",
-                    "description": "Flatten results"
-                  }
-                },
-                "required": [
-                  "query",
-                  "lat",
-                  "lng"
-                ]
-              }
+              "$ref": "../schemas/bulk-search-payload.json"
             }
           }
         },
@@ -71,16 +23,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "results": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": true
-                    }
-                  }
-                }
+                "$ref": "../schemas/bulk-search-results.json"
               }
             }
           }

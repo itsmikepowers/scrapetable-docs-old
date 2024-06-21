@@ -1,64 +1,70 @@
 {
     "post": {
-      "summary": "Retrieve LinkedIn profile information",
-      "description": "Fetch LinkedIn profile details for a list of LinkedIn profile URLs and optionally flatten the results.",
-      "requestBody": {
-        "required": true,
-        "content": {
-          "application/json": {
-            "schema": {
-              "type": "object",
-              "properties": {
-                "links": {
-                  "type": "array",
-                  "description": "List of LinkedIn profile URLs",
-                  "items": {
-                    "type": "string"
-                  },
-                  "example": [
-                    "http://www.linkedin.com/in/luke-sharp-b3838719a",
-                    "http://www.linkedin.com/in/hollie-smith-96ab44b5",
-                    "http://www.linkedin.com/in/jeannie-wyrick-b4760710a",
-                    "http://www.linkedin.com/in/rodneydbainjr"
-                  ]
-                },
-                "flatten": {
-                  "type": "boolean",
-                  "description": "Option to flatten the response structure",
-                  "example": true
-                }
-              },
-              "required": ["links", "flatten"]
+        "summary": "Retrieve LinkedIn company information",
+        "description": "Fetch LinkedIn company details for a list of LinkedIn company URLs and optionally flatten the results.",
+        "security": [
+            {
+                "apiKeyAuth": {}
             }
-          }
-        }
-      },
-      "responses": {
-        "200": {
-          "description": "Successful response with LinkedIn profile details",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "additionalProperties": true
+        ],
+        "requestBody": {
+            "description": "List of LinkedIn company URLs and flatten option",
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "links": {
+                                "type": "array",
+                                "description": "List of LinkedIn company URLs",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "example": [
+                                    "http://www.linkedin.com/company/aep-energy",
+                                    "http://www.linkedin.com/company/johnson-&-johnson",
+                                    "http://www.linkedin.com/company/ametek"
+                                ]
+                            },
+                            "flatten": {
+                                "type": "boolean",
+                                "description": "Option to flatten the response structure",
+                                "example": false
+                            }
+                        },
+                        "required": [
+                            "links"
+                        ]
+                    }
                 }
-              }
             }
-          }
         },
-        "400": {
-          "description": "Unexpected error",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
+        "responses": {
+            "200": {
+                "description": "Successful response with LinkedIn company details",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": true
+                            }
+                        }
+                    }
+                }
+            },
+            "400": {
+                "description": "Unexpected error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     }
-  }
-  
+}

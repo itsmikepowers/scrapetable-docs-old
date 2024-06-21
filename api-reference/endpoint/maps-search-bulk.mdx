@@ -1,46 +1,64 @@
 ---
-title: 'Maps Search Bulk'
-openapi: 'POST /maps/search-bulk'
-description: 'Search Google Maps based on certain lat and long coordinates for multiple locations.'
+title: 'Maps Search'
+openapi: 'POST /maps/search'
+description: 'Search Google Maps based on certain lat and long coordinates.'
 parameters:
-  - name: 'payloads'
+  - name: 'query'
     in: 'body'
-    description: 'Array of search query parameters for multiple locations'
+    description: 'Search query'
     required: true
     schema:
-      type: 'array'
-      items:
-        type: 'object'
-        properties:
-          query:
-            type: 'string'
-            description: 'Search query'
-          limit:
-            type: 'integer'
-            description: 'Maximum number of results'
-          country:
-            type: 'string'
-            description: 'Country code'
-          lang:
-            type: 'string'
-            description: 'Language code'
-          lat:
-            type: 'number'
-            format: 'float'
-            description: 'Latitude'
-          lng:
-            type: 'number'
-            format: 'float'
-            description: 'Longitude'
-          offset:
-            type: 'integer'
-            description: 'Offset for pagination'
-          zoom:
-            type: 'integer'
-            description: 'Zoom level'
-          flatten:
-            type: 'boolean'
-            description: 'Flatten results'
+      type: 'string'
+  - name: 'limit'
+    in: 'body'
+    description: 'Maximum number of results'
+    required: true
+    schema:
+      type: 'integer'
+  - name: 'country'
+    in: 'body'
+    description: 'Country code'
+    required: true
+    schema:
+      type: 'string'
+  - name: 'lang'
+    in: 'body'
+    description: 'Language code'
+    required: true
+    schema:
+      type: 'string'
+  - name: 'lat'
+    in: 'body'
+    description: 'Latitude'
+    required: true
+    schema:
+      type: 'number'
+      format: 'float'
+  - name: 'lng'
+    in: 'body'
+    description: 'Longitude'
+    required: true
+    schema:
+      type: 'number'
+      format: 'float'
+  - name: 'offset'
+    in: 'body'
+    description: 'Offset for pagination'
+    required: true
+    schema:
+      type: 'integer'
+  - name: 'zoom'
+    in: 'body'
+    description: 'Zoom level'
+    required: true
+    schema:
+      type: 'integer'
+  - name: 'flatten'
+    in: 'body'
+    description: 'Flatten results'
+    required: true
+    schema:
+      type: 'boolean'
 responses:
   '200':
     description: 'Search results'
@@ -73,3 +91,4 @@ components:
       required:
         - error
         - message
+---

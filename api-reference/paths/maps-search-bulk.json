@@ -1,17 +1,17 @@
 {
     "post": {
-      "description": "Search Google Maps based on certain lat and long coordinates for multiple locations.",
+      "description": "Search Google Maps based on certain lat and long coordinates.",
       "security": [
         {
           "apiKeyAuth": []
         }
       ],
       "requestBody": {
-        "description": "Search query parameters for multiple locations",
+        "description": "Search query parameters",
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../schemas/bulk-search-payload.json"
+              "$ref": "../schemas/search-payload.json"
             }
           }
         },
@@ -23,7 +23,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../schemas/bulk-search-results.json"
+                "$ref": "../schemas/search-results.json"
               }
             }
           }

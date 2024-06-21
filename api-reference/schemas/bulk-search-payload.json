@@ -1,60 +1,55 @@
 {
     "type": "object",
     "properties": {
-      "payloads": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "query": {
-              "type": "string",
-              "description": "Search query"
-            },
-            "limit": {
-              "type": "integer",
-              "description": "Maximum number of results"
-            },
-            "country": {
-              "type": "string",
-              "description": "Country code"
-            },
-            "lang": {
-              "type": "string",
-              "description": "Language code"
-            },
-            "lat": {
-              "type": "number",
-              "format": "float",
-              "description": "Latitude"
-            },
-            "lng": {
-              "type": "number",
-              "format": "float",
-              "description": "Longitude"
-            },
-            "offset": {
-              "type": "integer",
-              "description": "Offset for pagination"
-            },
-            "zoom": {
-              "type": "integer",
-              "description": "Zoom level"
-            },
-            "flatten": {
-              "type": "boolean",
-              "description": "Flatten results"
-            }
-          },
-          "required": [
-            "query",
-            "lat",
-            "lng"
-          ]
-        }
+      "query": {
+        "type": "string",
+        "description": "Search query"
+      },
+      "limit": {
+        "type": "integer",
+        "description": "Maximum number of results"
+      },
+      "country": {
+        "type": "string",
+        "description": "Country code"
+      },
+      "lang": {
+        "type": "string",
+        "description": "Language code"
+      },
+      "lat": {
+        "type": "number",
+        "format": "float",
+        "description": "Latitude"
+      },
+      "lng": {
+        "type": "number",
+        "format": "float",
+        "description": "Longitude"
+      },
+      "offset": {
+        "type": "integer",
+        "description": "Offset for pagination"
+      },
+      "zoom": {
+        "type": "integer",
+        "description": "Zoom level"
+      },
+      "flatten": {
+        "type": "boolean",
+        "description": "Flatten results"
       }
     },
     "required": [
-      "payloads"
+      "query",
+      "limit",
+      "country",
+      "lang",
+      "lat",
+      "lng",
+      "offset",
+      "zoom",
+      "flatten"
     ]
   }
   

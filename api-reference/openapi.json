@@ -70,6 +70,15 @@
           }
         }
       }
+    },
+    "/linkedin/profiles": {
+      "$ref": "./paths/linkedin-profiles.json"
+    },
+    "/linkedin/companies": {
+      "$ref": "./paths/linkedin-companies.json"
+    },
+    "/website/email-socials": {
+      "$ref": "./paths/website-email-socials.json"
     }
   },
   "components": {

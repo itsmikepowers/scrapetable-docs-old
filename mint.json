@@ -1,4 +1,5 @@
 {
+  "openapi": "./myopenapi.mdx",
   "$schema": "https://mintlify.com/schema.json",
   "name": "Starter Kit",
   "logo": {

@@ -1,0 +1,162 @@
+openapi: 3.0.1
+info:
+  title: ScrapeTable API
+  description: API for scraping LinkedIn and map data.
+  version: 1.0.0
+servers:
+  - url: http://v2.scrapetable.com
+  - url: https://stpapi.onrender.com
+paths:
+  /linkedin/companies:
+    post:
+      summary: Scrape LinkedIn company profiles
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                links:
+                  type: array
+                  items:
+                    type: string
+                  example:
+                    - http://www.linkedin.com/company/aep-energy
+                    - http://www.linkedin.com/company/johnson-&-johnson
+                    - http://www.linkedin.com/company/ametek
+                flatten:
+                  type: boolean
+                  example: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /linkedin/profiles:
+    post:
+      summary: Scrape LinkedIn user profiles
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                links:
+                  type: array
+                  items:
+                    type: string
+                  example:
+                    - http://www.linkedin.com/in/luke-sharp-b3838719a
+                    - http://www.linkedin.com/in/hollie-smith-96ab44b5
+                flatten:
+                  type: boolean
+                  example: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /maps/search-bulk:
+    post:
+      summary: Bulk search on map
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  query:
+                    type: string
+                    example: real estate
+                  limit:
+                    type: string
+                    example: '10'
+                  country:
+                    type: string
+                    example: us
+                  lang:
+                    type: string
+                    example: en
+                  lat:
+                    type: string
+                    example: '40.7128'
+                  lng:
+                    type: string
+                    example: '-74.0060'
+                  offset:
+                    type: string
+                    example: '0'
+                  zoom:
+                    type: string
+                    example: '13'
+                  flatten:
+                    type: boolean
+                    example: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /maps/search:
+    post:
+      summary: Search on map
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  example: food
+                limit:
+                  type: string
+                  example: '10'
+                country:
+                  type: string
+                  example: us
+                lang:
+                  type: string
+                  example: en
+                lat:
+                  type: string
+                  example: '51.5072'
+                lng:
+                  type: string
+                  example: '0.12'
+                offset:
+                  type: string
+                  example: '0'
+                zoom:
+                  type: string
+                  example: '13'
+                flatten:
+                  type: boolean
+                  example: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: api-key
+security:
+  - ApiKeyAuth: []

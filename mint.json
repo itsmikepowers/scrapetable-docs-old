@@ -36,21 +36,21 @@
     {
       "group": "Google Maps",
       "pages": [
-        "search-on-map",
-        "bulk-search-on-map"
+        "search",
+        "bulk-search"
       ]
     },
     {
       "group": "Linkedin",
       "pages": [
-        "scrape-linkedin-company-profiles",
-        "scrape-linkedin-user-profiles"
+        "companies",
+        "profiles"
       ]
     },
     {
       "group": "Website",
       "pages": [
-        "get-email-and-social-links-from-websites"
+        "email-socials"
       ]
     }
   ],

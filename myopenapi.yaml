@@ -5,7 +5,6 @@ info:
   version: 1.0.0
 servers:
   - url: http://v2.scrapetable.com
-  - url: https://stpapi.onrender.com
 paths:
   /linkedin/companies:
     post:

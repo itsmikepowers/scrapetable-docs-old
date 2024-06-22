@@ -1,7 +1,7 @@
 {
   "openapi": ["/myopenapi.yml"],
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Scrape Table Docs",
   "logo": {
     "dark": "/logo/dark.png",
     "light": "/logo/light.png"
@@ -45,6 +45,12 @@
       "pages": [
         "scrape-linkedin-company-profiles",
         "scrape-linkedin-user-profiles"
+      ]
+    },
+    {
+      "group": "Website",
+      "pages": [
+        "get-email-and-social-links-from-websites"
       ]
     }
   ],

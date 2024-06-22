@@ -151,6 +151,34 @@ paths:
             application/json:
               schema:
                 type: object
+  /website/email-socials:
+    post:
+      summary: Email Socials
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                websites:
+                  type: array
+                  items:
+                    type: string
+                  example:
+                    - coolhunting.com
+                    - brainpickings.org
+                    - kickstarter.com
+                flatten:
+                  type: boolean
+                  example: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
 components:
   securitySchemes:
     ApiKeyAuth:

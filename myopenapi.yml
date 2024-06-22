@@ -8,7 +8,7 @@ servers:
 paths:
   /linkedin/companies:
     post:
-      summary: Scrape LinkedIn company profiles
+      summary: Companies
       requestBody:
         required: true
         content:
@@ -36,7 +36,7 @@ paths:
                 type: object
   /linkedin/profiles:
     post:
-      summary: Scrape LinkedIn user profiles
+      summary: Profiles
       requestBody:
         required: true
         content:
@@ -63,7 +63,7 @@ paths:
                 type: object
   /maps/search-bulk:
     post:
-      summary: Bulk search on map
+      summary: Bulk Search
       requestBody:
         required: true
         content:
@@ -109,7 +109,7 @@ paths:
                 type: object
   /maps/search:
     post:
-      summary: Search on map
+      summary: Search
       requestBody:
         required: true
         content:

@@ -85,6 +85,15 @@
         "/maps/search-bulk",
         "api-reference/maps/search-bulk"
       ]
+    },
+    {
+      "group": "Endpoint Examples",
+      "pages": [
+        "scrape-linkedin-company-profiles",
+        "scrape-linkedin-user-profiles",
+        "bulk-search-on-map",
+        "search-on-map"
+      ]
     }
   ],
   "footerSocials": {

@@ -80,7 +80,10 @@
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "api-reference/endpoint/delete",
+        "search-bulk",
+        "/maps/search-bulk",
+        "api-reference/maps/search-bulk"
       ]
     }
   ],

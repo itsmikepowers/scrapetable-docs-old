@@ -4,7 +4,7 @@ info:
   description: API for scraping LinkedIn and map data.
   version: 1.0.0
 servers:
-  - url: http://api.scrapetable.com
+  - url: https://api.scrapetable.com
 paths:
   /linkedin/companies:
     post:

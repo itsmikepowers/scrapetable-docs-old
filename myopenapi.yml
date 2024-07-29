@@ -179,6 +179,29 @@ paths:
             application/json:
               schema:
                 type: object
+  /instagram/followers:
+    post:
+      summary: Instagram Followers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: itsmikepowers
+                count:
+                  type: integer
+                  example: 10
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
 components:
   securitySchemes:
     ApiKeyAuth:

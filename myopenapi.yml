@@ -4,7 +4,7 @@ info:
   description: API for scraping LinkedIn and map data.
   version: 1.0.0
 servers:
-  - url: http://v2.scrapetable.com
+  - url: http://api.scrapetable.com
 paths:
   /linkedin/companies:
     post:
@@ -49,8 +49,8 @@ paths:
                   items:
                     type: string
                   example:
-                    - http://www.linkedin.com/in/luke-sharp-b3838719a
-                    - http://www.linkedin.com/in/hollie-smith-96ab44b5
+                    - http://www.linkedin.com/in/williamhgates
+                    - http://www.linkedin.com/in/kevinolearytv
                 flatten:
                   type: boolean
                   example: false
@@ -166,8 +166,8 @@ paths:
                   items:
                     type: string
                   example:
-                    - coolhunting.com
-                    - brainpickings.org
+                    - apple.com
+                    - wsgr.org
                     - kickstarter.com
                 flatten:
                   type: boolean

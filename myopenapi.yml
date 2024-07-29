@@ -181,7 +181,7 @@ paths:
                 type: object
   /instagram/followers:
     post:
-      summary: Instagram Followers
+      summary: Followers
       requestBody:
         required: true
         content:

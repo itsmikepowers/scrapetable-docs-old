@@ -54,6 +54,12 @@
       ]
     },
     {
+      "group": "Amazon",
+      "pages": [
+        "search"
+      ]
+    },
+    {
       "group": "Website",
       "pages": [
         "email-socials"

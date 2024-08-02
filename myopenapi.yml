@@ -204,7 +204,7 @@ paths:
                 type: object
   /amazon/search:
     post:
-      summary: Amazon Product Search
+      summary: Search
       requestBody:
         required: true
         content:

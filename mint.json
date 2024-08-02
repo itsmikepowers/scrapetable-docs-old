@@ -60,6 +60,12 @@
       ]
     },
     {
+      "group": "Crypto",
+      "pages": [
+        "crypto-coin"
+      ]
+    },
+    {
       "group": "Website",
       "pages": [
         "email-socials"

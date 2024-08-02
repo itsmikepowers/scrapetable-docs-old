@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: ScrapeTable API
-  description: API for scraping LinkedIn, map data, and Amazon product searches.
+  description: API for scraping LinkedIn, map data, Amazon product searches, and cryptocurrency information.
   version: 1.0.0
 servers:
   - url: https://api.scrapetable.com
@@ -215,6 +215,26 @@ paths:
                 search:
                   type: string
                   example: laptop
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /crypto/coin:
+    post:
+      summary: Coin Information
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                coin:
+                  type: string
+                  example: dogecoin
       responses:
         '200':
           description: Successful response

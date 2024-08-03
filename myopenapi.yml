@@ -242,6 +242,35 @@ paths:
             application/json:
               schema:
                 type: object
+  /people/search:
+    post:
+      summary: People Search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  example: John
+                last_name:
+                  type: string
+                  example: Doe
+                city:
+                  type: string
+                  example: New York
+                state_abv:
+                  type: string
+                  example: NY
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
 components:
   securitySchemes:
     ApiKeyAuth:

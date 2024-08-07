@@ -34,10 +34,11 @@
       ]
     },
     {
-      "group": "Google Maps",
+      "group": "Google",
       "pages": [
-        "search",
-        "bulk-search"
+        "google-search",
+        "google-maps-search",
+        "google-maps-bulk-search"
       ]
     },
     {

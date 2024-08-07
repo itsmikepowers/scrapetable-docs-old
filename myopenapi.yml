@@ -63,7 +63,7 @@ paths:
                 type: object
   /maps/search-bulk:
     post:
-      summary: Bulk Search
+      summary: Google Maps Bulk Search
       requestBody:
         required: true
         content:
@@ -109,7 +109,7 @@ paths:
                 type: object
   /maps/search:
     post:
-      summary: Search
+      summary: Google Maps Search
       requestBody:
         required: true
         content:
@@ -264,6 +264,26 @@ paths:
                 state_abv:
                   type: string
                   example: NY
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /google/search:
+    post:
+      summary: Google Search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                search_query:
+                  type: string
+                  example: dogecoin
       responses:
         '200':
           description: Successful response

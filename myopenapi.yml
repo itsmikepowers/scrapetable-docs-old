@@ -264,22 +264,29 @@ paths:
                 state_abv:
                   type: string
                   example: NY
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
   /people/address:
-  post:
-    summary: Adress Search
-    requestBody:
-      required: true
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              street:
-                type: string
-                example: 123 Sesame St
-              city_state_zip:
-                type: string
-                example: Example Fl United States
+    post:
+      summary: Address Search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                street:
+                  type: string
+                  example: 123 Sesame St
+                city_state_zip:
+                  type: string
+                  example: Example Fl United States
       responses:
         '200':
           description: Successful response

@@ -34,7 +34,7 @@
       ]
     },
     {
-      "group": "Google",
+      "group": "Google--",
       "pages": [
         "google-search",
         "google-maps-search",
@@ -69,7 +69,8 @@
     {
       "group": "People",
       "pages": [
-        "people-search"
+        "people-search",
+        "address-search"
       ]
     },
     {

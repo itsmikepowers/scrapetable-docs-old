@@ -287,6 +287,9 @@ paths:
                 city_state_zip:
                   type: string
                   example: Example Fl United States
+                matching:
+                  type: boolean
+                  example: true
       responses:
         '200':
           description: Successful response
